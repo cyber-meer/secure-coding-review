@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SecureCode Audit | Security Review</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header class="navbar">
+        <div class="logo">
+            <span class="logo-icon">🛡</span>
+            Secure<span>Code</span>
+        </div>
+
+        <nav>
+            <a href="#overview">Overview</a>
+            <a href="#findings">Findings</a>
+            <a href="#analysis">Analysis</a>
+            <a href="#recommendations">Recommendations</a>
+        </nav>
+
+        <div class="status">
+            <span></span> Security Audit
+        </div>
+    </header>
+
+
+    <main>
+
+        <!-- HERO -->
+        <section class="hero" id="overview">
+
+            <div class="hero-content">
+
+                <div class="tag">
+                    🔐 TASK 3 · SECURE CODING REVIEW
+                </div>
+
+                <h1>
+                    Secure Coding
+                    <span>Audit Dashboard</span>
+                </h1>
+
+                <p>
+                    A professional security review of a JavaScript web application,
+                    identifying common vulnerabilities and providing practical
+                    remediation steps for safer software development.
+                </p>
+
+                <div class="hero-buttons">
+                    <a href="#findings" class="btn primary">
+                        View Security Findings →
+                    </a>
+
+                    <a href="#analysis" class="btn secondary">
+                        Analyze Code
+                    </a>
+                </div>
+
+            </div>
+
+            <div class="security-card">
+
+                <div class="shield">🛡️</div>
+
+                <h3>Application Security</h3>
+
+                <div class="security-score">
+                    <strong>72</strong>
+                    <span>/100</span>
+                </div>
+
+                <div class="progress">
+                    <div></div>
+                </div>
+
+                <p>Security posture requires improvement</p>
+
+            </div>
+
+        </section>
+
+
+        <!-- APPLICATION INFORMATION -->
+        <section class="section">
+
+            <div class="section-heading">
+                <span>01</span>
+                <div>
+                    <h2>Application Under Review</h2>
+                    <p>Target selected for manual security inspection</p>
+                </div>
+            </div>
+
+            <div class="info-grid">
+
+                <div class="info-card">
+                    <div class="icon purple">⌘</div>
+                    <h3>Programming Language</h3>
+                    <p>JavaScript</p>
+                    <small>Client-side web application</small>
+                </div>
+
+                <div class="info-card">
+                    <div class="icon blue">◉</div>
+                    <h3>Application Type</h3>
+                    <p>Web Application</p>
+                    <small>Interactive browser-based application</small>
+                </div>
+
+                <div class="info-card">
+                    <div class="icon green">✓</div>
+                    <h3>Review Method</h3>
+                    <p>Manual + Static Analysis</p>
+                    <small>Pattern-based security inspection</small>
+                </div>
+
+                <div class="info-card">
+                    <div class="icon orange">⚡</div>
+                    <h3>Security Standard</h3>
+                    <p>OWASP Principles</p>
+                    <small>Secure coding best practices</small>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- FINDINGS -->
+        <section class="section" id="findings">
+
+            <div class="section-heading">
+                <span>02</span>
+                <div>
+                    <h2>Security Findings</h2>
+                    <p>Issues discovered during the code review</p>
+                </div>
+            </div>
+
+            <div class="finding-grid">
+
+                <div class="finding critical">
+                    <div class="finding-top">
+                        <span class="severity critical-label">CRITICAL</span>
+                        <span class="finding-id">SC-001</span>
+                    </div>
+
+                    <h3>Unsafe DOM Manipulation</h3>
+
+                    <p>
+                        User-controlled data is inserted into the page using
+                        <code>innerHTML</code>, which can introduce Cross-Site
+                        Scripting vulnerabilities.
+                    </p>
+
+                    <div class="finding-bottom">
+                        <span>⚠ XSS Risk</span>
+                        <span>High Impact</span>
+                    </div>
+                </div>
+
+
+                <div class="finding high">
+                    <div class="finding-top">
+                        <span class="severity high-label">HIGH</span>
+                        <span class="finding-id">SC-002</span>
+                    </div>
+
+                    <h3>Hardcoded Secret</h3>
+
+                    <p>
+                        Sensitive credentials or API keys should never be stored
+                        directly inside client-side source code.
+                    </p>
+
+                    <div class="finding-bottom">
+                        <span>🔑 Secret Exposure</span>
+                        <span>High Impact</span>
+                    </div>
+                </div>
+
+
+                <div class="finding medium">
+                    <div class="finding-top">
+                        <span class="severity medium-label">MEDIUM</span>
+                        <span class="finding-id">SC-003</span>
+                    </div>
+
+                    <h3>Insufficient Input Validation</h3>
+
+                    <p>
+                        Input fields accept data without adequate validation,
+                        increasing the risk of unexpected or malicious input.
+                    </p>
+
+                    <div class="finding-bottom">
+                        <span>⚠ Input Validation</span>
+                        <span>Moderate Impact</span>
+                    </div>
+                </div>
+
+
+                <div class="finding low">
+                    <div class="finding-top">
+                        <span class="severity low-label">LOW</span>
+                        <span class="finding-id">SC-004</span>
+                    </div>
+
+                    <h3>Verbose Error Messages</h3>
+
+                    <p>
+                        Detailed error messages may reveal implementation
+                        information that could assist attackers.
+                    </p>
+
+                    <div class="finding-bottom">
+                        <span>ℹ Information Leak</span>
+                        <span>Low Impact</span>
+                    </div>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- CODE ANALYSIS -->
+        <section class="section analysis-section" id="analysis">
+
+            <div class="section-heading">
+                <span>03</span>
+                <div>
+                    <h2>Code Analysis</h2>
+                    <p>Compare vulnerable implementation with secure remediation</p>
+                </div>
+            </div>
+
+
+            <div class="code-comparison">
+
+                <div class="code-box vulnerable-code">
+
+                    <div class="code-header">
+                        <div>
+                            <span class="dot red"></span>
+                            Vulnerable Code
+                        </div>
+
+                        <span class="danger-text">⚠ UNSAFE</span>
+                    </div>
+
+<pre><code>function displayMessage(userInput) {
+
+    const output = document.getElementById("output");
+
+    // Unsafe DOM insertion
+    output.innerHTML = userInput;
+
+}
+
+const apiKey = "demo-secret-key";
+
+function processInput(input) {
+
+    // No validation
+    return input;
+
+}</code></pre>
+
+                </div>
+
+
+                <div class="arrow">→</div>
+
+
+                <div class="code-box secure-code">
+
+                    <div class="code-header">
+                        <div>
+                            <span class="dot green"></span>
+                            Secure Implementation
+                        </div>
+
+                        <span class="safe-text">✓ SECURE</span>
+                    </div>
+
+<pre><code>function displayMessage(userInput) {
+
+    const output = document.getElementById("output");
+
+    // Safe text insertion
+    output.textContent = userInput;
+
+}
+
+function processInput(input) {
+
+    // Basic validation
+    if (typeof input !== "string") {
+        return "";
+    }
+
+    return input.trim();
+
+}</code></pre>
+
+                </div>
+
+            </div>
+
+
+            <!-- SCANNER -->
+            <div class="scanner">
+
+                <div class="scanner-header">
+                    <div>
+                        <h3>🔍 Static Security Scanner</h3>
+                        <p>Enter JavaScript code to detect common insecure patterns.</p>
+                    </div>
+
+                    <button id="scanBtn">Run Security Scan</button>
+                </div>
+
+                <textarea id="codeInput"
+                    placeholder="Paste JavaScript code here...">const apiKey = "secret-key";
+element.innerHTML = userInput;</textarea>
+
+                <div id="scanResults" class="scan-results">
+                    <div class="scan-placeholder">
+                        Click <strong>Run Security Scan</strong> to analyze the code.
+                    </div>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- RECOMMENDATIONS -->
+        <section class="section" id="recommendations">
+
+            <div class="section-heading">
+                <span>04</span>
+                <div>
+                    <h2>Recommendations & Best Practices</h2>
+                    <p>Actions recommended to improve application security</p>
+                </div>
+            </div>
+
+
+            <div class="recommendation-grid">
+
+                <div class="recommendation">
+                    <span>01</span>
+                    <div>
+                        <h3>Validate User Input</h3>
+                        <p>
+                            Validate input type, format, length and expected values
+                            before processing user-controlled data.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="recommendation">
+                    <span>02</span>
+                    <div>
+                        <h3>Avoid Unsafe DOM APIs</h3>
+                        <p>
+                            Prefer textContent or safe DOM APIs instead of directly
+                            inserting untrusted HTML.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="recommendation">
+                    <span>03</span>
+                    <div>
+                        <h3>Protect Secrets</h3>
+                        <p>
+                            Never hardcode passwords, API keys or private credentials
+                            inside publicly accessible client-side code.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="recommendation">
+                    <span>04</span>
+                    <div>
+                        <h3>Use Security Headers</h3>
+                        <p>
+                            Configure appropriate security headers such as Content
+                            Security Policy to reduce browser-based attacks.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="recommendation">
+                    <span>05</span>
+                    <div>
+                        <h3>Perform Regular Code Reviews</h3>
+                        <p>
+                            Combine manual inspection with automated static analysis
+                            tools throughout the development lifecycle.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="recommendation">
+                    <span>06</span>
+                    <div>
+                        <h3>Handle Errors Securely</h3>
+                        <p>
+                            Log detailed information internally while displaying
+                            generic messages to application users.
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- REMEDIATION -->
+        <section class="section">
+
+            <div class="section-heading">
+                <span>05</span>
+                <div>
+                    <h2>Remediation Plan</h2>
+                    <p>Recommended steps for safer code</p>
+                </div>
+            </div>
+
+            <div class="timeline">
+
+                <div class="timeline-item">
+                    <div class="timeline-number">1</div>
+                    <div>
+                        <h3>Identify</h3>
+                        <p>Locate vulnerable functions and insecure coding patterns.</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-number">2</div>
+                    <div>
+                        <h3>Prioritize</h3>
+                        <p>Address critical and high-severity vulnerabilities first.</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-number">3</div>
+                    <div>
+                        <h3>Remediate</h3>
+                        <p>Replace unsafe functions with secure alternatives.</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-number">4</div>
+                    <div>
+                        <h3>Verify</h3>
+                        <p>Run static analysis and manual testing again after fixes.</p>
+                    </div>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- FINAL REPORT -->
+        <section class="final-report">
+
+            <div>
+                <span class="report-tag">SECURITY REVIEW COMPLETE</span>
+
+                <h2>Application Security Summary</h2>
+
+                <p>
+                    The reviewed JavaScript application contains several common
+                    security weaknesses. Applying input validation, safe DOM
+                    manipulation, secret management and regular security testing
+                    can significantly improve the application's security posture.
+                </p>
+            </div>
+
+            <div class="report-score">
+                <span>Overall Score</span>
+                <strong>72%</strong>
+                <small>Needs Improvement</small>
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <footer>
+        <div>
+            <strong>SecureCode Audit</strong>
+            <p>Secure Coding Review · Cybersecurity Project</p>
+        </div>
+
+        <div class="footer-right">
+            <span>Manual Review</span>
+            <span>Static Analysis</span>
+            <span>OWASP Principles</span>
+        </div>
+    </footer>
+
+
+    <script src="script.js"></script>
+
+</body>
+</html>
